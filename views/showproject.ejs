@@ -1,0 +1,51 @@
+
+<%- include ("partials/header") %>
+<div class="container">
+	<div class="row">
+		
+		<div class="col-md-9">
+			<div class="thumbnail">
+				<img class="img-responsive" src="<%= single_project.image %>">
+				<div class="caption-full">
+					<h4><%= single_project.topic %></h4>
+					<p><%= single_project.introduction %></p>
+					<p><%= single_project.district %></p>
+					<p><%= single_project.deadline %></p>
+					
+					<!-- <p>
+						Submissions received till now:
+						<!-- <%= single_project.submissions %> -->
+					<!-- </p> -->
+					 
+
+						<% if(!single_project.idea_found){ %> 
+							<% if(currentUser.role=="Admin"){ %>
+								<a href="/dashboard/<%= single_project._id %>/project_subs">View Submissions</a>
+							<% } %>
+							<% if(currentUser.role=="I am a student"){ %>
+								<a href="/dashboard/<%= single_project._id %>/submit">Submit Solution</a>
+							<% } %>
+						<% }else{ %>
+							<br>
+						<a href="/dashboard/<%= single_project._id %>/final">View Final Approved Submission</a>
+						<% } %>
+					
+				</div>
+				<a href="/chat" class="btn btn-warning">Join Live Discussion!</a>
+				<a href="/comment/<%= single_project._id %>/new" class="btn btn-primary">
+					Add a comment
+				</a>
+			</div>
+		<% single_project.comments.forEach(function(comment){ %>
+		<p>
+			<%= comment.author.username %> - - <%= comment.text %>
+		</p>
+	<% }) %>
+		</div>
+	</div>
+
+	
+	
+
+
+<%- include ("partials/footer") %>

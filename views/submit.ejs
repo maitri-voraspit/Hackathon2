@@ -1,0 +1,25 @@
+<%- include ("partials/header") %>
+
+<form method="POST" action="/<%= project._id %>/submit">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Brief</label>
+    <input type="text" name="submission[brief]" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter project name">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Image/Work flow</label>
+    <input name="submission[image]" type="text" class="form-control" id="exampleInputPassword1" placeholder="Image-URL">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Tech-Stack</label>
+    <input name ="submission[techstack]" type="text" class="form-control" id="exampleInputPassword1" placeholder="Teech-Stack">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Detailed Solution</label>
+    <input name ="submission[details]" type="text" class="form-control" id="exampleInputPassword1" placeholder="Solution">
+  </div>
+ 
+	
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<%- include ("partials/footer") %>

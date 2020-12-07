@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/main.css">
+	<link rel="stylesheet" href="/game.css">
+    <title>SWTN</title>
+</head>
+<body>
+ 
+    <nav class="d-flex justify-content-around align-items-center">
+        <div class="logo">
+            <h4>SolutionWithinTheNation</h4>
+        </div>
+        <ul class="nav-links d-flex justify-content-around">
+            <li>
+                <a href="/index">Home</a>
+            </li>
+			<!-- <form action="/results" method="GET" class="navbar-left" style="margin-top:14px;">
+	<input type="text" placeholder="search any game" name="submit">
+	<button class="btn btn-primary btn-sm">
+		Search</button>
+						
+</form> --><% if(currentUser && currentUser.role == "Admin"){ %>
+					<li><a href="/upload">Upload Project</a></li>
+					<li><a href="/post">Post Jobs</a></li>
+
+					<!-- <li><a href="/register">Sign Up</a></li>				 -->
+				<% }%>
+			
+			<% if(currentUser && (currentUser["role"]=="Creator" || currentUser["role"]=="head")){ %>
+				<li><a href="/jobpost">Create</a></li>
+			<% } %>
+			
+            <% if(!currentUser){ %>
+					<li><a href="/login">Login</a></li>
+					<li><a href="/register">Sign Up</a></li>				
+				<% } else {%>
+			
+				<% if(currentUser){ %>
+			    <li><a href="/logout">Logout</a></li>
+				<% } %>
+				<!-- <li><a href="/game//dashboard">Dashboard</a></li> -->
+				<li><a href="/dashboard">Dashboard</a></li>
+				<li><a href="/showtable">Ranks Info</a></li>
+				<li><a href="">Hi,<b><%= currentUser.username %></b></a></li>
+				<% } %>
+        </ul>
+    </nav>

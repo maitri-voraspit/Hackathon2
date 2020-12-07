@@ -1,0 +1,34 @@
+<%- include ("partials/header") %>
+<div class="container">
+				<hr>
+			
+		<div class="row">
+			
+				<% project.subs.forEach(function(sub){ %>
+			
+				<div class="col-md-4">
+					
+					<div class="card" style="width: 18rem;">
+					  <img src="<%= sub.image %>" class="card-img-top">
+					  <div class="card-body">
+						<h5 class="card-title"><%= sub.brief %></h5>
+						<h6 class="card-subtitle mb-2 text-muted">Upvotes received: <%= sub.upvotes %></h6>
+						<p class="card-text"><%= sub.techstack %></p>
+						<p class="card-text"><%= sub.details %></p>
+
+						<a href="/upvote/<%= sub._id %>" class="btn btn-primary">Upvote this Idea</a>
+						<hr>
+						<a href="/approve/<%= project._id %>/<%= sub._id %>" class="btn btn-success">Approve</a>
+					  </div>
+					</div>
+				
+			</div>
+				<% }) %>
+				
+			</div>
+			</div>
+	
+	
+	
+
+<%- include ("partials/footer") %>

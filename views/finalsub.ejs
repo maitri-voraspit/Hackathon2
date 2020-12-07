@@ -1,0 +1,12 @@
+<%- include ("partials/header") %>
+
+<%= submission.brief %>
+<div class="card" style="width: 18rem;">
+<img src="<%= submission.image %>" class="card-img-top">
+					  <div class="card-body">
+						<h5 class="card-title"><%= submission.brief %></h5>
+						<h6 class="card-subtitle mb-2 text-muted">Upvotes received: <%= submission.upvotes %></h6>
+						<p class="card-text"><%= submission.techstack %></p>
+						<p class="card-text"><%= submission.details %></p>
+	</div>
+<%- include ("partials/footer") %>

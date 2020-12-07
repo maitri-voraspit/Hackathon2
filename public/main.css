@@ -1,0 +1,51 @@
+
+nav{
+    z-index: 1;
+    min-height: 6vh;
+    background-color: #68686D;
+    font-family: 'Poppins', sans-serif;
+}
+.nav-links{
+    padding-top: 10px;
+    width: 45%;
+}
+.logo{
+    padding-top: 10px;
+}
+.nav-links a{
+    color: white;
+    text-decoration: none;
+}
+.nav-links a:hover{
+    color: white;
+    text-decoration: none;
+}
+.nav-links li{
+    list-style: none;
+}
+.logo{
+    font-size: 20px;
+    color: white;
+}
+header{
+    background-image: url(eng_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-attachment: fixed; */
+    height: 100vh;
+}
+.imp{
+    color: black;
+     padding-top: 10%;
+    /* padding-left: 30%; */
+    font-size: 50px;
+}
+.main-logo{
+    max-height: 200px;
+}
+button{
+    border-radius: 50px !important;
+}
+.main-button{
+    padding-top: 10px;
+}

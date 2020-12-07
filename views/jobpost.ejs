@@ -1,0 +1,26 @@
+<%- include("partials/header") %>
+<div class="container">
+	
+<% jobs.forEach(function(job){ %>
+	<h5>
+		Title-<%= job.title %>
+	</h5>
+	<h5>
+		Location-<%= job.location %>
+	</h5>
+	<h5>
+		Final Product-<%= job.item %>
+	</h5>
+	<h5>
+		Vacancy-<%= job.vacancy %>
+	</h5>
+	<h5>
+		Salary-<%= job.money %>
+	</h5>
+	
+	<% if(currentUser.role=="Creator"){ %>
+	<a href="/apply/<%= job._id %>" type="button" class="btn btn-primary">I would love to create this!</a>
+	<%}%> 
+<%})%>
+</div>
+<%- include("partials/footer") %>
